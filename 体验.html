@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>体验</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            border:none;
+            list-style: none;
+        }
+        ul{
+            width: 980px;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        li{
+            width: 200px;
+            height: 300px;
+            background: deepskyblue;
+            float: left;
+            margin: 10px;
+            display: flex;
+             justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="box">1</li>
+    <li class="box">2</li>
+    <li class="box">3</li>
+    <li class="box">4</li>
+    <li class="box">5</li>
+    <li class="box">6</li>
+    <li class="box">7</li>
+    <li class="box">8</li>
+    <li class="box">9</li>
+    <li class="box">10</li>
+    <li class="box">11</li>
+    <li class="box">12</li>
+    <li class="box">13</li>
+    <li class="box">14</li>
+    <li class="box">15</li>
+    <li class="box">16</li>
+</ul>
+<script src="js/scrollreveal.js"></script>
+<script>
+    var config = {
+        reset: true,        // 滚动鼠标时，动画开关
+        origin: 'bottom',    // 动画开始的方向
+        duration: 2000,     // 动画持续时间
+        delay: 0,           // 延迟
+        rotate: {x:0, y:0, z:0},       // 过度到0的初始角度
+        opacity: 0.1,       // 初始透明度
+        scale: 0.3,         //缩放
+        easing: 'ease-in-out',     // 缓动'ease', 'ease-in-out'，'linear'..
+        // 回调函数
+        beforeReveal: function(domEl){
+            // console.log('初始化完成执行,动画开始!');
+        },
+        beforeReset: function(domEl){
+             console.log('鼠标滚动之前调用!');
+        },
+        afterReveal: function(domEl){
+            // console.log('初始化完成执行,动画结束!');
+        },
+        afterReset: function(domEl){
+//                console.log('鼠标滚动之后调用!');
+        }
+
+    };
+    window.sr = ScrollReveal();
+    sr.reveal('.box',config)
+</script>
+</body>
+</html>
